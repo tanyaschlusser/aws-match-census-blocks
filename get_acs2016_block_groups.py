@@ -33,6 +33,7 @@ for f in tiger.iter_features(block_group_layer['id'], fields=','.join(fields)):
         file_handles[state] = open(destination, 'w')
     # The file is not itself a JSON object, but rows of individual dictionaries.
     file_handles[state].write(json.dumps(attrib))
+    file_handles[state].write('\n')
 
 for fh in file_handles.values():
     fh.close()
